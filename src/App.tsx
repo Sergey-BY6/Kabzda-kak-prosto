@@ -2,7 +2,8 @@ import React from 'react';
 import './App.css';
 import Accordion from './components/Accordion/Accordion';
 import {Rating} from './components/Rating/Rating';
-import ButtonONoF from './components/OnOf/OnOf';
+import ButtonONoF from "./components/OnOffMy/OnOf"
+import OnOff from './components/OnOffD/OnOff';
 
 function App() {
     console.log("App")
@@ -16,8 +17,12 @@ function App() {
             <Rating value={3}/>
             <Rating value={4}/>
             <Rating value={5}/>
-            <ButtonONoF value={false}/>
-            <ButtonONoF value={true}/>
+            {/*<ButtonONoF value={false}/>*/}
+            {/*<ButtonONoF value={true}/>*/}
+            <OnOff />
+            <OnOff />
+            {/*<OnOff on={false}/>*/}
+
 
         </div>
     );
