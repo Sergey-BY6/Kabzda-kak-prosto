@@ -4,24 +4,34 @@ import Accordion from './components/Accordion/Accordion';
 import {Rating} from './components/Rating/Rating';
 import ButtonONoF from "./components/OnOffMy/OnOf"
 import OnOff from './components/OnOffD/OnOff';
+import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
+import {UnControlledRating} from './components/UnControlledRating/UnControlledRating';
 
 function App() {
     console.log("App")
     return (
-        <div>
-            <Accordion titleValue={"Menu"} collapsed={true}/>
-            <Accordion titleValue={"Users"} collapsed={false}/>
-            <Rating value={0}/>
-            <Rating value={1}/>
-            <Rating value={2}/>
-            <Rating value={3}/>
-            <Rating value={4}/>
-            <Rating value={5}/>
+        <div className={"App"}>
+            {/*<Accordion titleValue={"Menu"} collapsed={true}/>*/}
+            {/*<Accordion titleValue={"Users"} collapsed={false}/>*/}
+            {/*<Rating value={0}/>*/}
+            {/*<Rating value={1}/>*/}
+            {/*<Rating value={2}/>*/}
+            {/*<Rating value={3}/>*/}
+            {/*<Rating value={4}/>*/}
+            {/*<Rating value={5}/>*/}
+
+
+
+
             {/*<ButtonONoF value={false}/>*/}
             {/*<ButtonONoF value={true}/>*/}
+            {/*<OnOff />*/}
             <OnOff />
-            <OnOff />
-            {/*<OnOff on={false}/>*/}
+
+            <UncontrolledAccordion titleValue={"Menu"}/>
+            {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
+
+            <UnControlledRating />
 
 
         </div>
