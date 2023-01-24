@@ -2,7 +2,7 @@ import React from 'react';
 
 type OnOffPropsType = {
     on: boolean
-    setOn: (value: boolean) => void
+    onChange: (on: boolean) => void
 }
 
 
@@ -43,8 +43,8 @@ const OnOff: React.FC<OnOffPropsType> = (props) => {
 
     return (
         <div>
-            <div style={onStyle} onClick={() => props.setOn(true)}>On</div>
-            <div style={offStyle} onClick={() => props.setOn(false)}>Off</div>
+            <div style={onStyle} onClick={() => props.onChange(true)}>On</div>
+            <div style={offStyle} onClick={() => props.onChange(false)}>Off</div>
             <div style={indicstorStyle}></div>
         </div>
     );
