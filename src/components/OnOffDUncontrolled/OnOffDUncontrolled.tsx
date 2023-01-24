@@ -7,7 +7,7 @@ type PropsType = {
 
 
 
-export const OnOff: React.FC<PropsType> = (props) => {
+const OnOffDUncontrolled: React.FC<PropsType> = (props) => {
 
 
     let [on, setOn] = useState(false)
@@ -50,4 +50,4 @@ export const OnOff: React.FC<PropsType> = (props) => {
     );
 };
 
-export default OnOff;
+export default OnOffDUncontrolled;
