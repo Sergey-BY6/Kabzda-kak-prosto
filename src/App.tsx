@@ -5,6 +5,8 @@ import {Rating, RatingValueType} from './components/Rating/Rating';
 import {UnControlledRating} from './components/UnControlledRating/UnControlledRating';
 import OnOff from './components/OnOff/OnOff';
 import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff';
+import { UncontrollInput} from './NoStories/UncontrollInput';
+import {ControlledInput} from './NoStories/ControlledInput';
 
 function App() {
     console.log("App")
@@ -16,16 +18,25 @@ function App() {
     return (
         <div className={"App"}>
 
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <UnControlledRating />
 
-            <Accordion titleValue={"Menu"}
-                       collapsed={accordionCollapsed}
-                       onChange={() => setAccordionCollapsed(!accordionCollapsed)}
-            />
+            <ControlledInput/>
+            <UncontrollInput/>
 
 
-            <UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString() }
+
+
+
+            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
+            {/*<UnControlledRating />*/}
+
+            {/*<Accordion titleValue={"Menu"}*/}
+            {/*           collapsed={accordionCollapsed}*/}
+            {/*           onChange={() => setAccordionCollapsed(!accordionCollapsed)}*/}
+            {/*/>*/}
+
+            {/*<UncontrolledOnOff onChange={setSwitchOn}/> {switchOn.toString() }*/}
+
+
             {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
 
             {/*<Accordion titleValue={"Users"} collapsed={false}/>*/}
@@ -35,8 +46,6 @@ function App() {
             {/*<Rating value={3}/>*/}
             {/*<Rating value={4}/>*/}
             {/*<Rating value={5}/>*/}
-
-
 
 
             {/*<ButtonONoF value={false}/>*/}
@@ -49,8 +58,6 @@ function App() {
             {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
 
             {/*<UnControlledRating />*/}
-
-
 
         </div>
     );
