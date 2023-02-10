@@ -1,6 +1,6 @@
 import React, {ChangeEvent, useState} from 'react';
 
-export const ControlledInput = () => {
+const ControlledInput = () => {
 
     const [valueInput, setValueInput] = useState("")
     const [checkBox, setcheckBox] = useState(true)
@@ -40,4 +40,3 @@ export const ControlledInput = () => {
         </div>
     );
 };
-

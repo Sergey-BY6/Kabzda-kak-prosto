@@ -2,14 +2,11 @@ import React, {useRef, useState, ChangeEvent} from 'react';
 
 
 
-
-
 export const UncontrollInput = () => {
 
     const [value, setValue] = useState("")
 
     const ref = useRef<HTMLInputElement>(null)
-
 
     const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
         setValue(e.currentTarget.value)
