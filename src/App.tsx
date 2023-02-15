@@ -8,7 +8,8 @@ import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff'
 import {UncontrollInput} from './NoStories/UncontrollInput';
 import {ControlledInput} from './NoStories/ControlledInput';
 import {AccordionControlled} from './NoStories/AccordionControlled';
-import {Select2} from './components/Select/Select';
+import {Select2} from './NoStories/Select/Select';
+import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 
 function App() {
 
@@ -29,14 +30,14 @@ function App() {
         <div className={'App'}>
 
 
-            <Select2 value={selectValue2}
-                    onChange={setSelectValueCallback2}
-                    items={[
-                        {title: 'Minsk', value: "1"},
-                        {title: 'Moscow', value: "2"},
-                        {title: 'Kiev', value: "3"},
-                    ]}
-            />
+            {/*<Select2 value={selectValue2}*/}
+            {/*//         onChange={setSelectValueCallback2}*/}
+            {/*//         items={[*/}
+            {/*//             {title: 'Minsk', value: "1"},*/}
+            {/*//             {title: 'Moscow', value: "2"},*/}
+            {/*//             {title: 'Kiev', value: "3"},*/}
+            {/*//         ]}*/}
+            {/*// />*/}
 
 
             {/*<ControlledInput/>*/}
@@ -83,7 +84,7 @@ function App() {
 
             {/*<OnOff />*/}
 
-            {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
+            <UncontrolledAccordion titleValue={"Menu"}/>
             {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
 
             {/*<UnControlledRating />*/}

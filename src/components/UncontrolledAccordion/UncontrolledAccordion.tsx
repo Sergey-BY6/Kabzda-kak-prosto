@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
+import {Reducer} from './reducer';
 
 type AccordionPropsType = {
     titleValue: string
@@ -7,16 +8,19 @@ type AccordionPropsType = {
 
 
 
+
 function UncontrolledAccordion (props: AccordionPropsType) {
 
 
-    const [collapsed, setCollapsed] = useState(true)
+    // const [collapsed, setCollapsed] = useState(true)
+    const [state, dispatch] = useReducer(Reducer,{collapsed: false})
 
 
         return (
             <div>
-                <AccordionTitle title={props.titleValue} onClick={()=> {setCollapsed(!collapsed)}}/>
-                {!collapsed && <AccordionBody />}
+                {/*<AccordionTitle title={props.titleValue} onClick={()=> {setCollapsed(!collapsed)}}/>*/}
+                <AccordionTitle title={props.titleValue} onClick={()=> {dispatch({type: "TOOGLE-COLLAPSED" })}}/>
+                {!state.collapsed && <AccordionBody />}
             </div>
         )
 }
