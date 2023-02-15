@@ -1,38 +1,101 @@
-import React, {ChangeEvent} from 'react';
-import {RatingValueType} from '../Rating/Rating';
-import {Button} from '@mui/material';
+import React, {ChangeEvent, KeyboardEvent, useEffect, useState} from 'react';
+import s from './Select.module.css'
 
 
 type ItemType = {
     title: string
-    value: any
+    value: string
 }
 
 
 type SelectPropsType = {
     value: any
-    onChange: (value: any)=>void
-    items: ItemType[]
+    onChange: (value: any) => void
+    items: ItemType []
 }
 
-export function Select (props: SelectPropsType) {
+
+export const Select2: React.FC<SelectPropsType> = (props) => {
+
+    const [active, setActive] = useState(false)
+    const [hoveredElementValue, setHoveredElementValuue] = useState(props.value)
+
+    const selectedItem = props.items.find(el => el.title === props.value)
+    const hoveredItem = props.items.find(el => el.title === hoveredElementValue)
+
+    useEffect(() => {
+        setHoveredElementValuue(props.value)
+    }, [props.value])
+
 
     const setValueHandler = (e: ChangeEvent<HTMLSelectElement>) => {
-            props.onChange(e.currentTarget.value)
+        props.onChange(e.currentTarget.value)
+        console.log(e.currentTarget.value)
     }
 
+    const toggleItems = () => {
+        setActive(!active)
+    }
+
+    const onItemClick = (e: string) => {
+        props.onChange(e)
+        toggleItems()
+        console.log(selectedItem)
+    }
+
+    const onKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
+        if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+            for (let i = 0; i < props.items.length; i++) {
+                if (props.items[i].title === hoveredElementValue) {
+                    const pretendentElement = e.key === 'ArrowDown' ?
+                        props.items[i + 1]
+                        :
+                        props.items[i - 1]
+                    if (pretendentElement) {
+                        props.onChange(pretendentElement.title)
+                        return
+                    }
+                }
+            }
+            if (!selectedItem)
+                props.onChange(props.items[0].title)
+        }
+        if (e.key === 'Enter' || e.key === 'Escape') {
+            setActive(false)
+        }
+        console.log('hi')
+    }
+
+
     return (
-        <div>
-          <div>-{props.value}-</div>
-            <select value={props.value} onChange={setValueHandler}>
-                <option>none</option>
-            {props.items.map( el => {
-                return (
-                        <option value={el.value}>{el.title}</option>
-                    // <div>{el.title}</div>
-                    )
-            })}
-            </select>
-        </div>
+        <>
+            {/*<h3>-{props.value}-</h3>*/}
+            {/*<select value={props.value} onChange={setValueHandler}>*/}
+            {/*    <option>none</option>*/}
+            {/*    {props.items.map(el => {*/}
+            {/*        return (*/}
+            {/*            <option key={el.value} value={el.title}>{el.title}</option>*/}
+            {/*            // <div>{el.title}</div>*/}
+            {/*        )*/}
+            {/*    })}*/}
+            {/*</select>*/}
+
+
+            <div className={s.select}
+                 onKeyUp={onKeyUp}
+                 tabIndex={0}
+            >
+                <span className={s.main} onClick={toggleItems}>{props.value}</span>
+                {
+                    active &&
+                    <div className={s.item}>
+                        {props.items.map(el => <div
+                            onMouseEnter={() => setHoveredElementValuue(el.title)}
+                            className={s.item + ' ' + (hoveredItem === el ? s.selected : '')}
+                            onClick={() => onItemClick(el.title)}
+                            key={el.value}>-{el.title}-</div>)}
+                    </div>}
+            </div>
+        </>
     )
 }

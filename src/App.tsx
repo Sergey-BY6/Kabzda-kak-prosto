@@ -8,34 +8,34 @@ import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff'
 import {UncontrollInput} from './NoStories/UncontrollInput';
 import {ControlledInput} from './NoStories/ControlledInput';
 import {AccordionControlled} from './NoStories/AccordionControlled';
-import {Select} from './components/Select/Select';
+import {Select2} from './components/Select/Select';
 
 function App() {
-    console.log('App')
 
     const [ratingValue, setRatingValue] = useState<RatingValueType>(4)
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(true)
     const [switchOn, setSwitchOn] = useState<boolean>(true)
-    const [selectValue, setSelectValue] = useState<string | undefined>(undefined)
+    const [selectValue2, setSelectValue2] = useState<string | undefined>("Moscow")
 
     const AccordionItemClick = (item: any) => {
         console.log(`Clicked item: ${item}`)
     }
-    const setSelectValueCallback = (e: any) => {
-        setSelectValue(e)
+
+    const setSelectValueCallback2 = (e: any) => {
+        setSelectValue2(e)
     }
 
     return (
         <div className={'App'}>
 
 
-            <Select  value={selectValue}
-                     onChange={setSelectValueCallback}
-            items={ [
-                {title:"Dimych", value: 1},
-                {title:"Maria", value: 2},
-                {title:"Oksana", value: 3},
-            ]}
+            <Select2 value={selectValue2}
+                    onChange={setSelectValueCallback2}
+                    items={[
+                        {title: 'Minsk', value: "1"},
+                        {title: 'Moscow', value: "2"},
+                        {title: 'Kiev', value: "3"},
+                    ]}
             />
 
 
