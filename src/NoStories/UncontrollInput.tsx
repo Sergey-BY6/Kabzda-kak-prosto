@@ -2,7 +2,7 @@ import React, {useRef, useState, ChangeEvent} from 'react';
 
 
 
-export const UncontrollInput = () => {
+export const UncontrollInputM = () => {
 
     const [value, setValue] = useState("")
 
@@ -31,3 +31,4 @@ export const UncontrollInput = () => {
     );
 };
 
+export const UncontrollInput = React.memo(UncontrollInputM)

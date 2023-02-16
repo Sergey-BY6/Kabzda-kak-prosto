@@ -9,7 +9,7 @@ type RatingPropsType = {
 
 type ValueType = 0 | 1 | 2 | 3 | 4 | 5
 
-export function UnControlledRating(props: RatingPropsType) {
+export function UnControlledRatingM (props: RatingPropsType) {
 
     const [value, setValue] = useState<ValueType>(0)
 
@@ -25,6 +25,8 @@ export function UnControlledRating(props: RatingPropsType) {
     )
 }
 
+export const UnControlledRating = React.memo(UnControlledRatingM)
+
 
 
 type StarPropsType = {
@@ -32,7 +34,9 @@ type StarPropsType = {
     setValue: () => void
 }
 
-function Star(props: StarPropsType) {
+function StarM (props: StarPropsType) {
 
         return <span onClick={()=> props.setValue()}>{props.selected ? <b> star </b> : " star "}</span>
 }
+
+const Star = React.memo(StarM)

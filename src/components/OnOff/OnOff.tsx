@@ -8,7 +8,7 @@ type OnOffPropsType = {
 
 
 
-const OnOff: React.FC<OnOffPropsType> = (props) => {
+const OnOffM: React.FC<OnOffPropsType> = (props) => {
 
 
 
@@ -48,6 +48,8 @@ const OnOff: React.FC<OnOffPropsType> = (props) => {
             <div style={indicstorStyle}></div>
         </div>
     );
-};
+}
+
+const OnOff = React.memo(OnOffM)
 
 export default OnOff;

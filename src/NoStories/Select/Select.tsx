@@ -15,7 +15,7 @@ type SelectPropsType = {
 }
 
 
-export const Select2: React.FC<SelectPropsType> = (props) => {
+export const Select2M: React.FC<SelectPropsType> = (props) => {
 
     const [active, setActive] = useState(false)
     const [hoveredElementValue, setHoveredElementValuue] = useState(props.value)
@@ -99,3 +99,6 @@ export const Select2: React.FC<SelectPropsType> = (props) => {
         </>
     )
 }
+
+
+export const Select2 = React.memo(Select2M)

@@ -30,17 +30,17 @@ function App() {
     return (
         <div className={'App'}>
 
-            <Example1/>
+            {/*<Example1/>*/}
 
 
             {/*<Select2 value={selectValue2}*/}
-            {/*//         onChange={setSelectValueCallback2}*/}
-            {/*//         items={[*/}
-            {/*//             {title: 'Minsk', value: "1"},*/}
-            {/*//             {title: 'Moscow', value: "2"},*/}
-            {/*//             {title: 'Kiev', value: "3"},*/}
-            {/*//         ]}*/}
-            {/*// />*/}
+            {/*        onChange={setSelectValueCallback2}*/}
+            {/*        items={[*/}
+            {/*            {title: 'Minsk', value: "1"},*/}
+            {/*            {title: 'Moscow', value: "2"},*/}
+            {/*            {title: 'Kiev', value: "3"},*/}
+            {/*        ]}*/}
+            {/*/>*/}
 
 
             {/*<ControlledInput/>*/}

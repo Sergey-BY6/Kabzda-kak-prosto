@@ -5,7 +5,7 @@ type PropsType = {
 }
 
 
-const UncontrolledOnOff: React.FC<PropsType> = (props) => {
+const UncontrolledOnOffM: React.FC<PropsType> = (props) => {
 
 
     let [on, setOn] = useState(false)
@@ -59,5 +59,7 @@ const UncontrolledOnOff: React.FC<PropsType> = (props) => {
         </div>
     );
 };
+
+const UncontrolledOnOff = React.memo(UncontrolledOnOffM)
 
 export default UncontrolledOnOff;
