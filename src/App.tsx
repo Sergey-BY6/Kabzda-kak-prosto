@@ -10,6 +10,7 @@ import {ControlledInput} from './NoStories/ControlledInput';
 import {AccordionControlled} from './NoStories/AccordionControlled';
 import {Select2} from './NoStories/Select/Select';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
+import {Example1} from './NoStories/ReactMemo';
 
 function App() {
 
@@ -28,6 +29,8 @@ function App() {
 
     return (
         <div className={'App'}>
+
+            <Example1/>
 
 
             {/*<Select2 value={selectValue2}*/}
@@ -84,7 +87,7 @@ function App() {
 
             {/*<OnOff />*/}
 
-            <UncontrolledAccordion titleValue={"Menu"}/>
+            {/*<UncontrolledAccordion titleValue={"Menu"}/>*/}
             {/*<UncontrolledAccordion titleValue={"Users"}/>*/}
 
             {/*<UnControlledRating />*/}
