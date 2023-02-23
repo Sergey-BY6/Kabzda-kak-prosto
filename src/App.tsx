@@ -8,9 +8,11 @@ import UncontrolledOnOff from './components/UncontrolledOnOff/UncontrolledOnOff'
 import {UncontrollInput} from './NoStories/UncontrollInput';
 import {ControlledInput} from './NoStories/ControlledInput';
 import {AccordionControlled} from './NoStories/AccordionControlled';
-import {Select2} from './NoStories/Select/Select';
+import {Select} from './NoStories/Select/Select';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import {Example1} from './NoStories/ReactMemo';
+import {ExamplteUseMemo1, HelpsToReactMemo} from './NoStories/UseMemo';
+import {SelectUseMemoHomework} from './NoStories/Select/SelectHomeworkUseMemo/SelectUseMemoHomework';
 
 function App() {
 
@@ -19,9 +21,10 @@ function App() {
     const [switchOn, setSwitchOn] = useState<boolean>(true)
     const [selectValue2, setSelectValue2] = useState<string | undefined>("Moscow")
 
-    const AccordionItemClick = (item: any) => {
-        console.log(`Clicked item: ${item}`)
-    }
+
+    // const AccordionItemClick = (item: any) => {
+    //     console.log(`Clicked item: ${item}`)
+    // }
 
     const setSelectValueCallback2 = (e: any) => {
         setSelectValue2(e)
@@ -31,9 +34,11 @@ function App() {
         <div className={'App'}>
 
             {/*<Example1/>*/}
+            {/*<ExamplteUseMemo1/>*/}
+            {/*<HelpsToReactMemo/>*/}
 
 
-            {/*<Select2 value={selectValue2}*/}
+            {/*<Select value={selectValue2}*/}
             {/*        onChange={setSelectValueCallback2}*/}
             {/*        items={[*/}
             {/*            {title: 'Minsk', value: "1"},*/}
@@ -41,6 +46,9 @@ function App() {
             {/*            {title: 'Kiev', value: "3"},*/}
             {/*        ]}*/}
             {/*/>*/}
+
+            <SelectUseMemoHomework />
+
 
 
             {/*<ControlledInput/>*/}
