@@ -11,7 +11,7 @@ import {AccordionControlled} from './NoStories/AccordionControlled';
 import {Select} from './NoStories/Select/Select';
 import UncontrolledAccordion from './components/UncontrolledAccordion/UncontrolledAccordion';
 import {Example1} from './NoStories/ReactMemo';
-import {ExamplteUseMemo1, HelpsToReactMemo} from './NoStories/UseMemo';
+import {ExamplteUseMemo1, HelpsToReactMemo, LikesUseCallback} from './NoStories/UseMemoUseCallback';
 import {SelectUseMemoHomework} from './NoStories/Select/SelectHomeworkUseMemo/SelectUseMemoHomework';
 
 function App() {
@@ -47,7 +47,8 @@ function App() {
             {/*        ]}*/}
             {/*/>*/}
 
-            <SelectUseMemoHomework />
+            {/*<SelectUseMemoHomework />*/}
+            <LikesUseCallback/>
 
 
 
