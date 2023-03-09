@@ -14,6 +14,7 @@ import {Example1} from './NoStories/ReactMemo';
 import {ExamplteUseMemo1, HelpsToReactMemo, LikesUseCallback} from './NoStories/UseMemoUseCallback';
 import {SelectUseMemoHomework} from './NoStories/Select/SelectHomeworkUseMemo/SelectUseMemoHomework';
 import {UseStateWork} from './NoStories/Select/UseState';
+import {UseEffectWork} from './NoStories/Select/UseEffect';
 
 function App() {
 
@@ -34,7 +35,9 @@ function App() {
     return (
         <div className={'App'}>
 
-            <UseStateWork/>
+
+            <UseEffectWork/>
+            {/*<UseStateWork/>*/}
 
             {/*<Example1/>*/}
             {/*<ExamplteUseMemo1/>*/}
