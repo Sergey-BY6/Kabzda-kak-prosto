@@ -15,6 +15,7 @@ import {ExamplteUseMemo1, HelpsToReactMemo, LikesUseCallback} from './NoStories/
 import {SelectUseMemoHomework} from './NoStories/Select/SelectHomeworkUseMemo/SelectUseMemoHomework';
 import {UseStateWork} from './NoStories/Select/UseState';
 import {UseEffectWork} from './NoStories/Select/UseEffect';
+import {UseEffectSetInterval, UseEffectSetTimeout} from './NoStories/Select/UseEffectSetTimeoutSetInterval';
 
 function App() {
 
@@ -35,8 +36,11 @@ function App() {
     return (
         <div className={'App'}>
 
+            <UseEffectSetInterval/>
 
-            <UseEffectWork/>
+{/*<UseEffectSetTimeout/>*/}
+
+            {/*<UseEffectWork/>*/}
             {/*<UseStateWork/>*/}
 
             {/*<Example1/>*/}
