@@ -13,6 +13,7 @@ import UncontrolledAccordion from './components/UncontrolledAccordion/Uncontroll
 import {Example1} from './NoStories/ReactMemo';
 import {ExamplteUseMemo1, HelpsToReactMemo, LikesUseCallback} from './NoStories/UseMemoUseCallback';
 import {SelectUseMemoHomework} from './NoStories/Select/SelectHomeworkUseMemo/SelectUseMemoHomework';
+import {UseStateWork} from './NoStories/Select/UseState';
 
 function App() {
 
@@ -33,6 +34,8 @@ function App() {
     return (
         <div className={'App'}>
 
+            <UseStateWork/>
+
             {/*<Example1/>*/}
             {/*<ExamplteUseMemo1/>*/}
             {/*<HelpsToReactMemo/>*/}
@@ -48,7 +51,7 @@ function App() {
             {/*/>*/}
 
             {/*<SelectUseMemoHomework />*/}
-            <LikesUseCallback/>
+            {/*<LikesUseCallback/>*/}
 
 
 
