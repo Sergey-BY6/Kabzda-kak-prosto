@@ -1,20 +1,18 @@
 import {useEffect, useMemo, useState} from 'react'
 
 
-
-
 export const UseEffectSetTimeout = () => {
 
     const [fake, setFake] = useState(1)
     const [counter, setCounter] = useState(1)
 
-    console.log("UseEffectSetTimeout")
+    console.log('UseEffectSetTimeout')
 
-    useEffect (()=> {
-        setTimeout (()=> {
-            console.log("setTimeout")
+    useEffect(() => {
+        setTimeout(() => {
+            console.log('setTimeout')
         }, 1000)
-    },[])
+    }, [])
 
 
     return (
@@ -29,12 +27,12 @@ export const UseEffectSetTimeout = () => {
 
 export const UseEffectSetInterval = () => {
 
-    const [fake, setFake] = useState(1)
-    const [counter, setCounter] = useState(1)
+    // const [fake, setFake] = useState(1)
+    // const [counter, setCounter] = useState(1)
     const [time, setTime] = useState(new Date())
 
-    console.log("UseEffectSetInterval")
-    console.log(counter)
+    console.log('UseEffectSetInterval')
+    // console.log(counter)
 
     // useEffect (()=> {
     //     setInterval (()=> {
@@ -52,21 +50,33 @@ export const UseEffectSetInterval = () => {
     //     </div>
     // )
 
-
-    useEffect(()=> {
-        setInterval (()=>{
+    useEffect(() => {
+        const id = setInterval(() => {
             setTime(new Date())
-        },1000)
-    },[])
+        }, 1000)
+        return () => {
+            clearInterval(id)
+        }
+    }, [])
 
-    let times = new Intl.DateTimeFormat ("ru", {
-        hour: 'numeric',
-        minute: 'numeric',
-        second: 'numeric'
-    }).format(time)
+    // let times = new Intl.DateTimeFormat ("ru", {
+    //     hour: 'numeric',
+    //     minute: 'numeric',
+    //     second: 'numeric'
+    // }).format(time)
+    //
+
+    const ger2digit = (num: number) => num < 10 ? '0' + num : num
+
+    const seconds = ger2digit(time.getSeconds())
+    const minutes = ger2digit(time.getMinutes())
+    const hours = ger2digit(time.getHours())
 
 
     return (
-        <div>{times}</div>
+        // <div>Hello, counter: {times}</div>
+        <div>
+            <div>Hello, counter: {`${hours}:${minutes}:${seconds}`}</div>
+        </div>
     )
 }
