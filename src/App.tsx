@@ -17,6 +17,7 @@ import {UseStateWork} from './NoStories/UseState';
 import {UseEffectWork} from './NoStories/UseEffect';
 import {UseEffectSetInterval, UseEffectSetTimeout} from './NoStories/UseEffectSetTimeoutSetInterval';
 import {Clock} from './components/Clock/Clock';
+import {SetTimeoutReset, UseEffectReset} from './NoStories/UseEffectReset';
 
 function App() {
 
@@ -37,7 +38,12 @@ function App() {
     return (
         <div className={'App'}>
 
-            <Clock mode={"analog"}/>
+            <SetTimeoutReset />
+            {/*<UseEffectReset />*/}
+
+
+
+            {/*<Clock mode={"analog"}/>*/}
             {/*<Clock mode={"digital"}/>*/}
 
             {/*<UseEffectSetInterval/>*/}
