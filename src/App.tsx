@@ -16,7 +16,7 @@ import {SelectUseMemoHomework} from './NoStories/Select/SelectHomeworkUseMemo/Se
 import {UseStateWork} from './NoStories/UseState';
 import {UseEffectWork} from './NoStories/UseEffect';
 import {UseEffectSetInterval, UseEffectSetTimeout} from './NoStories/UseEffectSetTimeoutSetInterval';
-import {Clock} from './NoStories/Clock';
+import {Clock} from './components/Clock/Clock';
 
 function App() {
 
@@ -37,7 +37,8 @@ function App() {
     return (
         <div className={'App'}>
 
-            <Clock/>
+            <Clock mode={"analog"}/>
+            {/*<Clock mode={"digital"}/>*/}
 
             {/*<UseEffectSetInterval/>*/}
 
